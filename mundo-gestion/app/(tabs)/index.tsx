@@ -17,38 +17,39 @@ export default function Index() {
       <View style={styles.headerBar}>
         <Image
           source={require('../../assets/logo.png')}
-          style={[styles.logo,{marginTop: 15}]}
+          style={[styles.logo, {marginTop: 15}]}
           resizeMode="contain"
         />
       </View>
+      
       {/* Contenido principal */}
       <View style={styles.innerContainer}>
         <Text style={[styles.title, {marginTop: -100}]}>Control de despachos</Text>
-        <Text style={[styles.headerSubtitle,{marginTop: -40}]}>
+        <Text style={[styles.headerSubtitle, {marginTop: -40}]}>
           (Estado de despachos realizados durante el día)
         </Text>
 
-      {/* Tabla estilizada */}
-      <View style={[styles.table,{marginTop: -20}]}>
-        {/* Encabezados de tabla */}
-        <View style={[styles.row, styles.headerRow]}>
-          <Text style={styles.headerCell}>Estado</Text>
-          <Text style={styles.headerCell}>Cantidad</Text>
-        </View>
-        
-        {/* Filas de datos */}
-        {summaryData.map((item, index) => (
-          <View 
-            key={index} 
-            style={[
-              styles.row,
-              index % 2 === 0 ? styles.evenRow : styles.oddRow
-            ]}
-          >
-            <Text style={styles.cell}>{item.title}</Text>
-            <Text style={[styles.cell, styles.valueCell]}>{item.value}</Text>
+        {/* Tabla estilizada */}
+        <View style={[styles.table, {marginTop: -20}]}>
+          {/* Encabezados de tabla */}
+          <View style={[styles.row, styles.headerRow]}>
+            <Text style={styles.headerCell}>Estado</Text>
+            <Text style={styles.headerCell}>Cantidad</Text>
           </View>
-        ))}
+          
+          {/* Filas de datos */}
+          {summaryData.map((item, index) => (
+            <View 
+              key={index} 
+              style={[
+                styles.row,
+                index % 2 === 0 ? styles.evenRow : styles.oddRow
+              ]}
+            >
+              <Text style={styles.cell}>{item.title}</Text>
+              <Text style={[styles.cell, styles.valueCell]}>{item.value}</Text>
+            </View>
+          ))}
         </View>
 
         <View style={styles.reminderContainer}>
@@ -57,11 +58,21 @@ export default function Index() {
             Todas las minutas deben ser confirmadas en tienda para evitar irregularidades
           </Text>
         </View>
+
+        {/* Ver listas de despachos */}
+        <TouchableOpacity
+          style={styles.despachosButton}
+          onPress={() => console.log("Navegar a listas de despachos")}
+        >
+          <Text style={styles.despachosButtonText}>Ver listas de despachos</Text>
+          <Ionicons name="arrow-forward" size={20} color="white" />
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
+// Tus estilos se mantienen exactamente igual
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -86,6 +97,26 @@ const styles = StyleSheet.create({
     height: 100,
     marginRight: 10,
     resizeMode: 'contain',
+  },
+  despachosButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#DC2626',
+    padding: 15,
+    borderRadius: 8,
+    marginTop: 20,
+    marginHorizontal: 20,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    width: '100%',
+  },
+  despachosButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   headerTitleBlack: {
     color: '#000000',
@@ -142,7 +173,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flex: 1,
   },
-  // Estilos no utilizados (se mantienen por si acaso)
   headerSubtitle: {
     color: '#A1A1AA',
     textAlign: 'center',
