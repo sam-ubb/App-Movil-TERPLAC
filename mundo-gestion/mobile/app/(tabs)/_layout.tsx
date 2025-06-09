@@ -38,6 +38,14 @@ export default function TabLayout() {
     []
   );
 
+  // Botón de perfiles
+  const renderProfileIcon = useCallback(
+    ({ color, size }: { color: string; size: number }) => (
+      <Ionicons name="person-outline" size={size} color={color} />
+    ),
+    []
+  );
+
   return (
     <Tabs
       screenOptions={{
@@ -88,6 +96,14 @@ export default function TabLayout() {
           title: 'Minutas',
           tabBarIcon: renderListIcon,
           tabBarAccessibilityLabel: 'Listado de minutas',
+        }}
+      />
+      <Tabs.Screen
+        name="perfil"
+        options={{
+          title: 'Perfil',
+          tabBarIcon: renderProfileIcon,
+          tabBarAccessibilityLabel: 'Perfil de usuario',
         }}
       />
     </Tabs>
