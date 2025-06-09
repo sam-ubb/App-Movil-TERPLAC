@@ -46,6 +46,13 @@ export default function CrearMinutaScreen() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerBar}>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={[styles.logo, {marginTop: 15}]}
+          resizeMode="contain"
+        />    
+      </View >      
       <Text style={styles.title}>Nueva Minuta</Text>
 
       <TextInput
@@ -86,8 +93,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
-    padding: 20,
+
   },
+    headerBar: {
+    flexDirection: 'row',
+    height: 60,
+    alignItems: 'center',
+    padding: 15,
+    justifyContent: 'flex-start',
+    backgroundColor: '#FFFFFF',
+  },
+    logo: {
+    width: 150,
+    height: 100,
+    marginRight: 10,
+    resizeMode: 'contain',
+  },  
   title: {
     color: '#FFF',
     fontSize: 24,

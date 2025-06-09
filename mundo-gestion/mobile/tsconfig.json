@@ -2,15 +2,19 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "baseUrl": ".", // Necesario para que funcionen los paths
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"] // Ejemplo: apunta a la carpeta "src"
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "mobile/.expo/types/**/*.ts",
-    "mobile/expo-env.d.ts"
+    "mobile/expo-env.d.ts",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
   ]
 }

@@ -1,9 +1,16 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function AboutScreen() {
   return (
     <ScrollView style={styles.container}>
+      <View style={styles.headerBar}>
+        <Image
+          source={require('../../assets/logo.png')}
+          style={[styles.logo, {marginTop: 15}]}
+          resizeMode="contain"
+        />    
+      </View >       
       <View style={styles.header}>
         <Text style={styles.title}>Cómo usar tu perfil</Text>
         <Text style={styles.subtitle}>Guía rápida de la aplicación</Text>
@@ -56,8 +63,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000000',
-    padding: 20,
+
   },
+    headerBar: {
+    flexDirection: 'row',
+    height: 60,
+    alignItems: 'center',
+    padding: 15,
+    justifyContent: 'flex-start',
+    backgroundColor: '#FFFFFF',
+  },
+    logo: {
+    width: 150,
+    height: 100,
+    marginRight: 10,
+    resizeMode: 'contain',
+  }, 
   header: {
     marginBottom: 30,
     alignItems: 'center',
