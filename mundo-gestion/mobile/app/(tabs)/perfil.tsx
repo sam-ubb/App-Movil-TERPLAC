@@ -1,4 +1,4 @@
-import { View, Text, Image,StyleSheet, ScrollView, Pressable } from 'react-native';
+import { View, Text, Image,StyleSheet, ScrollView, Pressable, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Google from 'expo-auth-session/providers/google';
 import * as AuthSession from 'expo-auth-session';
@@ -25,14 +25,37 @@ export default function ProfileScreen() {
         <View style={styles.innerContainer}>
         <Text style={[styles.title, {marginTop: -100}]}>Perfil de Usuario</Text>
         <Text style={styles.subtitle}>Gestiona tu información personal</Text>
-      
-        <Pressable
+        <TextInput 
+          placeholder="example@gmail.com"
+          style={styles.Textinput}
+          placeholderTextColor="#999"
+          />
+        <TextInput 
+          placeholder="Contraseña"
+          style={styles.Textinput}
+          placeholderTextColor="#999"
+          secureTextEntry={true}
+          />
+        <Text style={styles.texto}>
+          ¿Tienes problemas para iniciar sesión?
+        </Text>
+
+        <TouchableOpacity 
+          style={styles.botonIniciar}
+          >
+            <Text style={styles.botonTexto}>Iniciar sesión</Text>
+        </TouchableOpacity>
+    
+      <Text style={styles.texto}>
+        ¿No tienes cuenta? <Text style={{ color: 'blue' }}>Regístrate</Text>
+      </Text>     
+
+      <Pressable
         onPress={() => {
           promptAsync().catch((e) => {
             console.error('Error al iniciar sesión: ', e);
         })}}
-        >
-
+        >   
       <View style={styles.section}>
         <Ionicons name="person-circle-outline" size={32} color="#DC2626" style={styles.icon} />
         <View>
@@ -46,7 +69,7 @@ export default function ProfileScreen() {
         </View>
         
       </View>  
-       </Pressable>
+      </Pressable>
        </View>
 </View>
     );
@@ -91,6 +114,11 @@ const styles = StyleSheet.create({
     color: '#A1A1AA',
     fontSize: 16,
   },
+  texto: {
+    color: '#A1A1AA',
+    fontSize: 14,
+    marginBottom: 10,
+  },
   section: {
     flexDirection: 'row',
     backgroundColor: '#1F1F1F',
@@ -121,4 +149,26 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     fontSize: 12,
   },
+  Textinput: {
+    backgroundColor: '#1F1F1F',
+    color: '#FFF',
+    borderRadius: 8,
+    padding: 15,
+    marginBottom: 15,
+  },
+  botonIniciar: {
+    backgroundColor: '#DC2626',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+    botonTexto: {
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 18,
+    borderRadius: 8,
+    
+  },
+
 });
