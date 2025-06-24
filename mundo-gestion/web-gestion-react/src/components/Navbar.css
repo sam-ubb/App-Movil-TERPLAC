@@ -3,6 +3,9 @@
   padding: 1rem 2rem;
   display: flex;
   gap: 1.5rem;
+  width: 100%; 
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  position: fixed;
 }
 
 .nav-link {

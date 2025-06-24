@@ -4,6 +4,8 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #ffffff;
+  width: 100%; 
+  position: absolute
 }
 
 .main-content {
