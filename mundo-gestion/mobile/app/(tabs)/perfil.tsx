@@ -1,7 +1,7 @@
 import { View, Text, Image, Pressable, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Google from 'expo-auth-session/providers/google';
-import styles from '../styles/perfilStyles'; 
+import styles from '../../styles/perfilStyles'; 
 
 export default function ProfileScreen() {
 

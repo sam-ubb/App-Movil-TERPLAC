@@ -1,6 +1,6 @@
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../styles/indexStyles'; 
+import styles from '../../styles/indexStyles'; 
 import { useEffect, useState } from 'react';
 
 export default function Index() {

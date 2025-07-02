@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../styles/aboutStyles'; 
+import styles from '../../styles/aboutStyles'; 
 
 export default function AboutScreen() {
   return (
