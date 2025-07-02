@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-nat
 import { Ionicons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
-import styles from '../styles/crear-minutaStyles'; 
+import styles from '../../styles/crear-minutaStyles'; 
 import { Picker } from '@react-native-picker/picker';
 
 export default function CrearMinutaScreen() {
