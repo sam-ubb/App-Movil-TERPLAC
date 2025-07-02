@@ -96,33 +96,7 @@ export default function Index() {
     { title: 'Cancelados', value: ordenes.filter((orden: any) => orden.estado === 'Cancelado').length },
   ];
 
-  // Mostrar pantalla de carga
-  if (loading) {
-    console.log('🔄 Mostrando pantalla de carga...');
-    return (
-      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-        <Text>Cargando...</Text>
-      </View>
-    );
-  }
 
-  // Mostrar error si hay alguno
-  if (error) {
-    console.log('❌ Mostrando pantalla de error:', error);
-    return (
-      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center', padding: 20 }]}>
-        <Text style={{ color: 'red', textAlign: 'center', marginBottom: 20 }}>
-          Error: {error}
-        </Text>
-        <TouchableOpacity 
-          style={{ backgroundColor: '#007AFF', padding: 10, borderRadius: 5 }}
-          onPress={fetchData}
-        >
-          <Text style={{ color: 'white' }}>Reintentar</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
 
   console.log('✅ Renderizando componente principal con', ordenes.length, 'órdenes');
 
